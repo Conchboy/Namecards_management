@@ -7,3 +7,25 @@ def show_menu():
     print("1. 新增名片\n2. 显示名片\n3. 名片查询\n")
     print("0. 退出系统")
     print("*" * 40)
+
+
+def new_card():
+    """新增名片"""
+    print("-" * 40)
+    print("新增名片")
+
+
+def show_all():
+    """显示全部"""
+    print("-" * 40)
+    print("显示全部")
+
+
+def search_card():
+    """查询名片"""
+    print("-" * 40)
+    print("查询名片")
+
+
+
+

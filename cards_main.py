@@ -12,14 +12,14 @@ while True:
 
         # 新增名片
         if action_str == "1":
-            pass
+            cards_tools.new_card()
 
         # 显示全部
         if action_str == "2":
-            pass
+            cards_tools.show_all()
         # 查询名片
         if action_str == "3":
-            pass
+            cards_tools.search_card()
 
         # 如果在开发程序时，不想立刻编写分支内部的代码，可以使用pass关键字
         # 表示一个占位符，能够保证程序的代码结构正确
