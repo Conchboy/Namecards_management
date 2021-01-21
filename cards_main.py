@@ -1,7 +1,9 @@
 # 名片管理主程序
+import cards_tools
+
 while True:
     # 显示功能菜单
-
+    cards_tools.show_menu()
     action_str = input("请选择您希望执行的从操作：")
     print("您选择的操作是 【%s】" % action_str)
 
