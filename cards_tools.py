@@ -1,5 +1,7 @@
 # 显示菜单函数
-card_dict ={}
+card_dict = {}
+
+
 def show_menu():
     """显示菜单"""
     print("*" * 40)
@@ -34,14 +36,7 @@ def show_all():
     print("*" * 40)
 
 
-
-
-
 def search_card():
     """查询名片"""
     print("-" * 40)
     print("查询名片")
-
-
-
-
