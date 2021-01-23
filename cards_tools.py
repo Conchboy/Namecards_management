@@ -28,12 +28,13 @@ def new_card():
 def show_all():
     """显示全部"""
     print("-" * 40)
-    print("显示全部")
-    if len(card_dict) ==0:
+
+    if len(card_dict) == 0:
         print("当前没有任何名片信息，请使用新增功能添加名片")
         # return关键字可以返回一个函数的执行结果
-        # return下方的代码不会被执行
+        # return下方的代码不会被执行，直接结束函数跳出
         return
+    print("显示全部")
     for card_title in ["姓名", "QQ号码", "电话号码", "邮箱"]:
         print("%s\t\t" % card_title, end="")
     print("")
@@ -41,7 +42,7 @@ def show_all():
 
     print("*" * 40)
     # 遍历名片字典依次输出信息
-    print ("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
+    print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
                                      card_dict["QQ"],
                                      card_dict["phone"],
                                      card_dict["E-mail"]))
