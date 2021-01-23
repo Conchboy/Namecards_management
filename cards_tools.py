@@ -1,4 +1,5 @@
 # 显示菜单函数
+card_list = []
 card_dict = {}
 
 
@@ -22,6 +23,7 @@ def new_card():
     phone_char = input("请输入电话号码：")
     email_char = input("请输入电子邮件地址：")
     card_dict = {"name": name_char, "QQ": qq_char, "phone": phone_char, "E-mail": email_char}
+    card_list.append(card_dict)
     print("谢谢输入，新增的名片是： % s" % card_dict)
 
 
@@ -29,7 +31,7 @@ def show_all():
     """显示全部"""
     print("-" * 40)
 
-    if len(card_dict) == 0:
+    if len(card_list) == 0:
         print("当前没有任何名片信息，请使用新增功能添加名片")
         # return关键字可以返回一个函数的执行结果
         # return下方的代码不会被执行，直接结束函数跳出
@@ -39,13 +41,12 @@ def show_all():
         print("%s\t\t" % card_title, end="")
     print("")
     # 打印分隔线
-
     print("*" * 40)
     # 遍历名片字典依次输出信息
     print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
-                                     card_dict["QQ"],
-                                     card_dict["phone"],
-                                     card_dict["E-mail"]))
+                                    card_dict["QQ"],
+                                    card_dict["phone"],
+                                    card_dict["E-mail"]))
 
 
 def search_card():
@@ -55,14 +56,14 @@ def search_card():
     # 1. 提示用户输入需要查询的姓名
     find_name = input("请输入要搜索的姓名：")
     # 2. 遍历名片列表，查询要搜索的姓名，如果没有找到，需要提示用户
-    for card_list in card_dict:
-        if find_name == card_list["name"]:
+    for card_dict in card_list:
+        if find_name == card_dict["name"]:
             print("姓名\t\tQQ\t\t电话\t\t邮箱")
             print("*" * 40)
             print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
-                                     card_dict["QQ"],
-                                     card_dict["phone"],
-                                     card_dict["E-mail"]))
+                                            card_dict["QQ"],
+                                            card_dict["phone"],
+                                            card_dict["E-mail"]))
 
 
 
