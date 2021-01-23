@@ -52,3 +52,22 @@ def search_card():
     """查询名片"""
     print("-" * 40)
     print("查询名片")
+    # 1. 提示用户输入需要查询的姓名
+    find_name = input("请输入要搜索的姓名：")
+    # 2. 遍历名片列表，查询要搜索的姓名，如果没有找到，需要提示用户
+    for card_list in card_dict:
+        if find_name == card_list["name"]:
+            print("姓名\t\tQQ\t\t电话\t\t邮箱")
+            print("*" * 40)
+            print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
+                                     card_dict["QQ"],
+                                     card_dict["phone"],
+                                     card_dict["E-mail"]))
+
+
+
+            break
+    else:
+        print("抱歉没有找到 %s" % find_name)
+
+
