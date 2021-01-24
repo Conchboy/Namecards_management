@@ -73,5 +73,17 @@ def search_card():
 
 
 def deal_card(find_dict):
+
     print(find_dict)
+    action_str = input("请输入对名片的操作："
+                       "[1] 修改 [2] 删除 [0] 返回上级菜单")
+    if action_str == "1":
+        find_dict["name"] = input("姓名：")
+        find_dict["QQ"] = input("QQ：")
+        find_dict["phone"] = input("电话：")
+        find_dict["Email"] = input("邮箱：")
+        print("修改名片")
+    elif action_str == "2":
+        card_list.remove(find_dict)
+        print("名片已删除")
 
