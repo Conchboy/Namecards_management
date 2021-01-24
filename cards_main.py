@@ -1,4 +1,5 @@
 # 名片管理主程序
+#！ C:\Users\C2243829\AppData\Local\Microsoft\WindowsApps\python.exe
 import cards_tools
 
 while True:
@@ -34,4 +35,3 @@ while True:
     # 其他输入显示内容错误，需要提示用户
     else:
         print("您输入的不正确，请重新选择。")
-
