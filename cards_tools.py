@@ -22,7 +22,7 @@ def new_card():
     qq_char = input("请输入QQ号码：")
     phone_char = input("请输入电话号码：")
     email_char = input("请输入电子邮件地址：")
-    card_dict = {"name": name_char, "QQ": qq_char, "phone": phone_char, "E-mail": email_char}
+    card_dict = {"name": name_char, "QQ": qq_char, "phone": phone_char, "Email": email_char}
     card_list.append(card_dict)
     print("谢谢输入，新增的名片是： % s" % card_dict)
 
@@ -47,7 +47,7 @@ def show_all():
         print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
                                         card_dict["QQ"],
                                         card_dict["phone"],
-                                        card_dict["E-mail"]))
+                                        card_dict["Email"]))
 
 
 def search_card():
@@ -64,7 +64,7 @@ def search_card():
             print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
                                             card_dict["QQ"],
                                             card_dict["phone"],
-                                            card_dict["E-mail"]))
+                                            card_dict["Email"]))
             # TODO 针对找到的名片记录执行谢盖和删除的操作
             deal_card(card_dict)
             break
@@ -78,12 +78,22 @@ def deal_card(find_dict):
     action_str = input("请输入对名片的操作："
                        "[1] 修改 [2] 删除 [0] 返回上级菜单")
     if action_str == "1":
-        find_dict["name"] = input("姓名：")
-        find_dict["QQ"] = input("QQ：")
-        find_dict["phone"] = input("电话：")
-        find_dict["Email"] = input("邮箱：")
-        print("修改名片")
+        find_dict["name"] = input_card_info(find_dict["name"], "姓名【回车不修改】：")
+        find_dict["QQ"] = input_card_info(find_dict["QQ"], "QQ【回车不修改】：")
+        find_dict["phone"] = input_card_info(find_dict["phone"], "电话【回车不修改】：")
+        find_dict["Email"] = input_card_info(find_dict["Email"], "邮箱【回车不修改】：")
+        print("修改名片成功！")
     elif action_str == "2":
         card_list.remove(find_dict)
-        print("名片已删除")
+        print("名片已删除！")
 
+
+def input_card_info(dict_value, tip_message):
+    # 1. 提示用户输入内容
+    result_str = input(tip_message)
+    # 2. 针对用户输入的内容进行判断，如果用户输入了内容，直接返回结果
+    if len(result_str) > 0:
+        return result_str
+    # 3. 如果用户没有输入内容， 返回“字典中原有的值”
+    else:
+        return dict_value
