@@ -43,7 +43,11 @@ def show_all():
     # 打印分隔线
     print("*" * 40)
     # 遍历名片字典依次输出信息
-    print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"], card_dict["QQ"], card_dict["phone"], card_dict["E-mail"]))
+    for card_dict in card_list:
+        print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
+                                        card_dict["QQ"],
+                                        card_dict["phone"],
+                                        card_dict["E-mail"]))
 
 
 def search_card():
