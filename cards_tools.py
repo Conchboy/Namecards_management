@@ -65,7 +65,7 @@ def search_card():
                                             card_dict["QQ"],
                                             card_dict["phone"],
                                             card_dict["Email"]))
-            # TODO 针对找到的名片记录执行谢盖和删除的操作
+            # 针对找到的名片记录执行谢盖和删除的操作
             deal_card(card_dict)
             break
     else:
@@ -73,7 +73,10 @@ def search_card():
 
 
 def deal_card(find_dict):
-
+    """
+    处理查找到的名片的修改和删除
+    :param find_dict:查找到的名片
+    """
     print(find_dict)
     action_str = input("请输入对名片的操作："
                        "[1] 修改 [2] 删除 [0] 返回上级菜单")
@@ -89,6 +92,12 @@ def deal_card(find_dict):
 
 
 def input_card_info(dict_value, tip_message):
+    """
+    输入名片信息
+    :param dict_value: 字典中原有的值
+    :param tip_message: 输入的提示文字
+    :return: 如果用户输入了内容，那么返回内容，否则返回字典中的原有值
+    """
     # 1. 提示用户输入内容
     result_str = input(tip_message)
     # 2. 针对用户输入的内容进行判断，如果用户输入了内容，直接返回结果
