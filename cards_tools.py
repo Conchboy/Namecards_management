@@ -43,10 +43,7 @@ def show_all():
     # 打印分隔线
     print("*" * 40)
     # 遍历名片字典依次输出信息
-    print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
-                                    card_dict["QQ"],
-                                    card_dict["phone"],
-                                    card_dict["E-mail"]))
+    print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"], card_dict["QQ"], card_dict["phone"], card_dict["E-mail"]))
 
 
 def search_card():
@@ -64,8 +61,13 @@ def search_card():
                                             card_dict["QQ"],
                                             card_dict["phone"],
                                             card_dict["E-mail"]))
+            # TODO 针对找到的名片记录执行谢盖和删除的操作
+            deal_card(card_dict)
             break
     else:
         print("抱歉没有找到 %s" % find_name)
 
+
+def deal_card(find_dict):
+    print(find_dict)
 
