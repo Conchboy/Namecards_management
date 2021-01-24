@@ -57,16 +57,13 @@ def search_card():
     find_name = input("请输入要搜索的姓名：")
     # 2. 遍历名片列表，查询要搜索的姓名，如果没有找到，需要提示用户
     for card_dict in card_list:
-        if find_name == card_dict["name"]:
+        if card_dict["name"] == find_name:
             print("姓名\t\tQQ\t\t电话\t\t邮箱")
             print("*" * 40)
             print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
                                             card_dict["QQ"],
                                             card_dict["phone"],
                                             card_dict["E-mail"]))
-
-
-
             break
     else:
         print("抱歉没有找到 %s" % find_name)
